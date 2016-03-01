@@ -16,10 +16,4 @@ object FruitBuild extends Build {
 
     lazy val banana = Project(id = "banana",
                            base = file("banana")) dependsOn(fruitLib)
-                           
-    lazy val customRepo = System.getProperty("maven.repo")
-
-    lazy val customRepository = (if( null != customRepo ) customRepo else Path.userHome.absolutePath+"/.m2/repository")
-    
-    publishMavenStyle := true
 }
